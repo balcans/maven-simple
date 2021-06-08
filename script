@@ -1,8 +1,11 @@
 node{
-    stage('clone repository'){
-        git 'https://github.com/balcans/maven-simple.git'
+    stage('create file'){
+        sh 'touch newFile.txt'
     }
-    stage('print from file'){
-        sh 'cat README.md'
+    stage('write file'){
+        sh 'echo "bla blab la" > newFile.txt'
+    }
+    stage('print file'){
+        sh 'cat newFile.txt'
     }
 }
